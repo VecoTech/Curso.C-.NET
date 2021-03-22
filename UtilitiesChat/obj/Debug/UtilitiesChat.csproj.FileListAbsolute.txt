@@ -1,0 +1,9 @@
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\obj\Debug\UtilitiesChat.csprojAssemblyReference.cache
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\obj\Debug\UtilitiesChat.csproj.CoreCompileInputs.cache
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\bin\Debug\UtilitiesChat.dll
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\bin\Debug\UtilitiesChat.pdb
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\bin\Debug\Newtonsoft.Json.dll
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\bin\Debug\Newtonsoft.Json.xml
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\obj\Debug\UtilitiesChat.csproj.CopyComplete
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\obj\Debug\UtilitiesChat.dll
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\UtilitiesChat\obj\Debug\UtilitiesChat.pdb
