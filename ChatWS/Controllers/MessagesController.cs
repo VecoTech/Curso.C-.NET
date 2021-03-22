@@ -28,7 +28,7 @@ namespace ChatWS.Controllers
                 using (ChatDBEntities db = new ChatDBEntities())
                 {
                     List<MessagesResponse> lst = (from d in db.message.ToList()
-                                                  where d.idState == 1
+                                                  where d.idState == 1 && d.idRoom == model.IdRoom
                                                   orderby d.date_created descending
                                                   select new MessagesResponse
                                                   {
