@@ -14,9 +14,9 @@ using UtilitiesChat.Models.WS;
 
 namespace ChatDesktop
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -43,10 +43,10 @@ namespace ChatDesktop
 
             if (oReply.result == 1)
             {
-                UserResponse oUserResponse = JsonConvert.DeserializeObject<UserResponse>(
+                Business.Session.oUser = JsonConvert.DeserializeObject<UserResponse>(
                     JsonConvert.SerializeObject(oReply.data)
                     );
-                MessageBox.Show("Entraste");
+                this.Close();
             }
             else
             {

@@ -7,10 +7,11 @@ C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\bin\Debu
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\bin\Debug\Newtonsoft.Json.xml
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.csprojAssemblyReference.cache
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.exe.config
-C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.Form1.resources
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.Properties.Resources.resources
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.csproj.GenerateResource.cache
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.csproj.CoreCompileInputs.cache
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.csproj.CopyComplete
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.exe
 C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.pdb
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.FrmLogin.resources
+C:\Doc\Programas\C#\MVC\Video\hdeleon.net.2018.08.10\ChatWS\ChatDesktop\obj\Debug\ChatDesktop.FrmMain.resources
