@@ -33,12 +33,18 @@
             this.iniciarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.cboRooms = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboRooms = new System.Windows.Forms.ComboBox();
+            this.splitContainerChat = new System.Windows.Forms.SplitContainer();
+            this.panelMessages = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerChat)).BeginInit();
+            this.splitContainerChat.Panel1.SuspendLayout();
+            this.splitContainerChat.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -48,7 +54,7 @@
             this.usuarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,13 +64,13 @@
             this.iniciarSesiónToolStripMenuItem,
             this.cerrarSesiónToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // iniciarSesiónToolStripMenuItem
             // 
             this.iniciarSesiónToolStripMenuItem.Name = "iniciarSesiónToolStripMenuItem";
-            this.iniciarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.iniciarSesiónToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.iniciarSesiónToolStripMenuItem.Text = "Iniciar sesión";
             this.iniciarSesiónToolStripMenuItem.Click += new System.EventHandler(this.iniciarSesiónToolStripMenuItem_Click);
             // 
@@ -72,7 +78,7 @@
             // 
             this.cerrarSesiónToolStripMenuItem.Enabled = false;
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
@@ -80,7 +86,9 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Enabled = false;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -93,18 +101,10 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Size = new System.Drawing.Size(800, 422);
-            this.splitContainer1.SplitterDistance = 78;
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainerChat);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 420);
+            this.splitContainer1.SplitterDistance = 77;
             this.splitContainer1.TabIndex = 1;
-            // 
-            // cboRooms
-            // 
-            this.cboRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRooms.FormattingEnabled = true;
-            this.cboRooms.Location = new System.Drawing.Point(12, 35);
-            this.cboRooms.Name = "cboRooms";
-            this.cboRooms.Size = new System.Drawing.Size(302, 24);
-            this.cboRooms.TabIndex = 0;
             // 
             // label1
             // 
@@ -115,6 +115,42 @@
             this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Sala";
+            // 
+            // cboRooms
+            // 
+            this.cboRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRooms.FormattingEnabled = true;
+            this.cboRooms.Location = new System.Drawing.Point(88, 15);
+            this.cboRooms.Name = "cboRooms";
+            this.cboRooms.Size = new System.Drawing.Size(302, 33);
+            this.cboRooms.TabIndex = 0;
+            this.cboRooms.SelectedIndexChanged += new System.EventHandler(this.cboRooms_SelectedIndexChanged);
+            // 
+            // splitContainerChat
+            // 
+            this.splitContainerChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerChat.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainerChat.IsSplitterFixed = true;
+            this.splitContainerChat.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerChat.Name = "splitContainerChat";
+            this.splitContainerChat.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerChat.Panel1
+            // 
+            this.splitContainerChat.Panel1.Controls.Add(this.panelMessages);
+            this.splitContainerChat.Size = new System.Drawing.Size(800, 339);
+            this.splitContainerChat.SplitterDistance = 285;
+            this.splitContainerChat.TabIndex = 0;
+            // 
+            // panelMessages
+            // 
+            this.panelMessages.AutoScroll = true;
+            this.panelMessages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMessages.Location = new System.Drawing.Point(0, 0);
+            this.panelMessages.Name = "panelMessages";
+            this.panelMessages.Size = new System.Drawing.Size(800, 285);
+            this.panelMessages.TabIndex = 0;
             // 
             // FrmMain
             // 
@@ -133,8 +169,12 @@
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainerChat.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerChat)).EndInit();
+            this.splitContainerChat.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +189,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboRooms;
+        private System.Windows.Forms.SplitContainer splitContainerChat;
+        private System.Windows.Forms.Panel panelMessages;
     }
 }

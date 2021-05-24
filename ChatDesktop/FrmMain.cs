@@ -16,6 +16,9 @@ namespace ChatDesktop
 {
     public partial class FrmMain : Form
     {
+        int posYFinal = 10;
+        Panel lastPanel = null;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -61,6 +64,9 @@ namespace ChatDesktop
             cboRooms.DataSource = lst;
             cboRooms.DisplayMember = "Name";
             cboRooms.ValueMember = "Id";
+
+            //Obtenemos mensajes del chat
+            GetMessages();
         }
         private void SessionStart()
         {
@@ -75,6 +81,79 @@ namespace ChatDesktop
             }
 
         }
+        private void GetMessages()
+        {
+            int idRoom = 0;
+            //posYFinal = 10;
+            panelMessages.Controls.Clear();
+            lastPanel = null;
+
+            try
+            {
+                idRoom = (int)cboRooms.SelectedValue;
+            }
+            catch //(Exception)
+            {
+
+                //throw;
+            }
+            if(idRoom > 0)
+            {
+                List<MessagesResponse> lst = new List<MessagesResponse>();
+
+                MessagesRequest oMessagesRequest = new MessagesRequest();
+                oMessagesRequest.AccessToken = Business.Session.oUser.AccessToken;
+                oMessagesRequest.IdRoom = idRoom;
+
+                RequestUtil oRequestUtil = new RequestUtil();
+                Reply oReply = oRequestUtil.Execute<MessagesRequest>(Constants.Url.MESSAGES, "post", oMessagesRequest);
+
+                lst = JsonConvert.DeserializeObject<List<MessagesResponse>>(JsonConvert.SerializeObject(oReply.data));
+
+                lst = lst.OrderBy(d => d.DateCreated).ToList();
+
+                foreach (MessagesResponse oMessage in lst)
+                {
+                    AddMessage(oMessage);
+                }
+
+            }
+        }
+        private void AddMessage(MessagesResponse oMessage)
+        {
+            Panel oPanel = new Panel();
+
+            oPanel.Width = panelMessages.Width - 30; //300;
+            oPanel.Height = 70;
+            oPanel.BackColor = Color.LightGray;
+            //oPanel.Location = new Point(10, posYFinal);
+            //posYFinal += oPanel.Height + 10;
+            if (lastPanel == null)
+                oPanel.Location = new Point(10, 10);
+            else
+                oPanel.Location = new Point(10, lastPanel.Location.Y + lastPanel.Height + 10);
+
+            lastPanel = oPanel;
+
+            panelMessages.Controls.Add(oPanel);
+            panelMessages.ScrollControlIntoView(oPanel);
+
+            //agregamos hijos
+            TextBox txtMessage = new TextBox();
+            txtMessage.Text = oMessage.Message;
+            txtMessage.Location = new Point(10, 10);
+            txtMessage.Width = oPanel.Width - 20;
+            txtMessage.ReadOnly = true;
+            txtMessage.BorderStyle = BorderStyle.None;
+            oPanel.Controls.Add(txtMessage);
+        }
         #endregion
+
+        private void cboRooms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //posYFinal = 10;
+            //panelMessages.Controls.Clear();
+            GetMessages();
+        }
     }
 }
